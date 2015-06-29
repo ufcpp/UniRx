@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+#if !UniRxLibrary
 using UnityEngine;
+#endif
 
 namespace UniRx
 {
@@ -26,7 +28,9 @@ namespace UniRx
         [NonSerialized]
         bool isDisposed = false;
 
+#if !UniRxLibrary
         [SerializeField]
+#endif
         T value = default(T);
 
         [NonSerialized]
@@ -43,12 +47,24 @@ namespace UniRx
             }
             set
             {
+                if (!canPublishValueOnSubscribe)
+                {
+                    canPublishValueOnSubscribe = true;
+                    SetValue(value);
+
+                    if (isDisposed) return; // don't notify but set value 
+                    if (publisher != null)
+                    {
+                        publisher.OnNext(this.value);
+                    }
+                    return;
+                }
+
                 if (value == null)
                 {
                     if (this.value != null)
                     {
                         SetValue(value);
-                        canPublishValueOnSubscribe = true;
 
                         if (isDisposed) return; // don't notify but set value 
                         if (publisher != null)
@@ -62,7 +78,6 @@ namespace UniRx
                     if (this.value == null || !this.value.Equals(value)) // don't use EqualityComparer<T>.Default
                     {
                         SetValue(value);
-                        canPublishValueOnSubscribe = true;
 
                         if (isDisposed) return;
                         if (publisher != null)

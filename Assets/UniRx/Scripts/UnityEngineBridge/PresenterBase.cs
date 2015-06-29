@@ -14,10 +14,10 @@ namespace UniRx
     public interface IPresenter
     {
         IPresenter Parent { get; }
-        GameObject gameObject { get; }
         void RegisterParent(IPresenter parent);
         void InitializeCore();
         void StartCapturePhase();
+        void Awake();
     }
 
     /// <summary>
@@ -41,6 +41,14 @@ namespace UniRx
         }
 
         /// <summary>
+        /// Force Start BeforeInitialize/Initialize. If you create presenter dynamically, maybe useful.
+        /// </summary>
+        public void ForceInitialize()
+        {
+            ForceInitialize(Unit.Default);
+        }
+
+        /// <summary>
         /// Same as Start but called after all children are initialized.
         /// </summary>
         protected abstract void Initialize();
@@ -55,6 +63,7 @@ namespace UniRx
 
         int childrenCount = 0;
         int currentCalledCount = 0;
+        bool isAwaken = false;
         bool isInitialized = false;
         bool isStartedCapturePhase = false;
         Subject<Unit> initializeSubject = null;
@@ -103,9 +112,21 @@ namespace UniRx
         /// </summary>
         protected abstract void Initialize(T argument);
 
-        /// <summary>Infrastructure method called by UnityEngine. If you needs override Awake, override OnAwake.</summary>
-        protected void Awake()
+        /// <summary>
+        /// Force Start BeforeInitialize/Initialize. If you create presenter dynamically, maybe useful.
+        /// </summary>
+        public virtual void ForceInitialize(T argument)
         {
+            Awake();
+            PropagateArgument(argument);
+            Start();
+        }
+
+        void IPresenter.Awake()
+        {
+            if (isAwaken) return;
+            isAwaken = true;
+
             children = Children;
             childrenCount = children.Length;
 
@@ -113,13 +134,15 @@ namespace UniRx
             {
                 var child = children[i];
                 child.RegisterParent(this);
-                if (!child.gameObject.activeSelf)
-                {
-                    child.gameObject.SetActive(true); // force activate children
-                    child.gameObject.SetActive(false);
-                }
+                child.Awake(); // call Awake directly
             }
             OnAwake();
+        }
+
+        /// <summary>Infrastructure method called by UnityEngine. If you needs override Awake, override OnAwake.</summary>
+        protected void Awake()
+        {
+            (this as IPresenter).Awake();
         }
 
         /// <summary>An alternative of Awake.</summary>

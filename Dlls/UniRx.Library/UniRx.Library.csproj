@@ -26,7 +26,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;UniRxLibrary</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -209,6 +209,15 @@
     </Compile>
     <Compile Include="..\..\Assets\UniRx\Scripts\UnityEngineBridge\AotSafeExtensions.cs">
       <Link>UnityEngineBridge\AotSafeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\UniRx\Scripts\UnityEngineBridge\ReactiveCollection.cs">
+      <Link>UnityEngineBridge\ReactiveCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\UniRx\Scripts\UnityEngineBridge\ReactiveDictionary.cs">
+      <Link>UnityEngineBridge\ReactiveDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\UniRx\Scripts\UnityEngineBridge\ReactiveProperty.cs">
+      <Link>UnityEngineBridge\ReactiveProperty.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
