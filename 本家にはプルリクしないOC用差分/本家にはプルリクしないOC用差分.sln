@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.Extensions", "UniRx.Extensions\UniRx.Extensions.csproj", "{13DD79A8-43FF-467E-8ED6-F297A4AF0E52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{D475BE55-1E59-4F85-83C2-FD40BB8BD732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.Library", "..\Dlls\UniRx.Library\UniRx.Library.csproj", "{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IteratorTasks", "..\..\IteratorTasks\IteratorTasks\IteratorTasks.csproj", "{6C013095-537E-428A-9632-F5B18EE0EDCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IteratorTasks.Extensions", "..\..\IteratorTasks\IteratorTasks.Extensions\IteratorTasks.Extensions.csproj", "{9AA09159-8567-4F4B-9871-24B43DECF6AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		IosDebug|Any CPU = IosDebug|Any CPU
+		IosRelease|Any CPU = IosRelease|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13DD79A8-43FF-467E-8ED6-F297A4AF0E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13DD79A8-43FF-467E-8ED6-F297A4AF0E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13DD79A8-43FF-467E-8ED6-F297A4AF0E52}.IosDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13DD79A8-43FF-467E-8ED6-F297A4AF0E52}.IosDebug|Any CPU.Build.0 = Debug|Any CPU
+		{13DD79A8-43FF-467E-8ED6-F297A4AF0E52}.IosRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{13DD79A8-43FF-467E-8ED6-F297A4AF0E52}.IosRelease|Any CPU.Build.0 = Release|Any CPU
+		{13DD79A8-43FF-467E-8ED6-F297A4AF0E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13DD79A8-43FF-467E-8ED6-F297A4AF0E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}.IosDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}.IosDebug|Any CPU.Build.0 = Debug|Any CPU
+		{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}.IosRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}.IosRelease|Any CPU.Build.0 = Release|Any CPU
+		{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C013095-537E-428A-9632-F5B18EE0EDCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C013095-537E-428A-9632-F5B18EE0EDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C013095-537E-428A-9632-F5B18EE0EDCA}.IosDebug|Any CPU.ActiveCfg = IosDebug|Any CPU
+		{6C013095-537E-428A-9632-F5B18EE0EDCA}.IosDebug|Any CPU.Build.0 = IosDebug|Any CPU
+		{6C013095-537E-428A-9632-F5B18EE0EDCA}.IosRelease|Any CPU.ActiveCfg = IosRelease|Any CPU
+		{6C013095-537E-428A-9632-F5B18EE0EDCA}.IosRelease|Any CPU.Build.0 = IosRelease|Any CPU
+		{6C013095-537E-428A-9632-F5B18EE0EDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C013095-537E-428A-9632-F5B18EE0EDCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AA09159-8567-4F4B-9871-24B43DECF6AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA09159-8567-4F4B-9871-24B43DECF6AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA09159-8567-4F4B-9871-24B43DECF6AF}.IosDebug|Any CPU.ActiveCfg = IosDebug|Any CPU
+		{9AA09159-8567-4F4B-9871-24B43DECF6AF}.IosDebug|Any CPU.Build.0 = IosDebug|Any CPU
+		{9AA09159-8567-4F4B-9871-24B43DECF6AF}.IosRelease|Any CPU.ActiveCfg = IosRelease|Any CPU
+		{9AA09159-8567-4F4B-9871-24B43DECF6AF}.IosRelease|Any CPU.Build.0 = IosRelease|Any CPU
+		{9AA09159-8567-4F4B-9871-24B43DECF6AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AA09159-8567-4F4B-9871-24B43DECF6AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD} = {D475BE55-1E59-4F85-83C2-FD40BB8BD732}
+		{6C013095-537E-428A-9632-F5B18EE0EDCA} = {D475BE55-1E59-4F85-83C2-FD40BB8BD732}
+		{9AA09159-8567-4F4B-9871-24B43DECF6AF} = {D475BE55-1E59-4F85-83C2-FD40BB8BD732}
+	EndGlobalSection
+EndGlobal
