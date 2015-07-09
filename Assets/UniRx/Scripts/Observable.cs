@@ -2,7 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
+#if SystemReactive
+using UniRx;
+
+namespace System.Reactive.Linq
+#else
 namespace UniRx
+#endif
 {
     // Standard Query Operators
 
