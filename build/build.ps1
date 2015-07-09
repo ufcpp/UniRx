@@ -29,7 +29,7 @@ function Invoke-Build
     process {
         ./NuGet.exe restore $Path
 
-        . $Script:msbuild $Path /t:Build
+        . $Script:msbuild $Path /t:Build /p:Configuration=Release 
     }
 }
 
