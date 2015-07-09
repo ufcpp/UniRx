@@ -30,12 +30,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MinimumAsyncBridge, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MinimumAsyncBridge.0.9.1.0\lib\net35\MinimumAsyncBridge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MinimumThreadingBridge, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MinimumThreadingBridge.0.9.1.0\lib\net35\MinimumThreadingBridge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UniRx, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UniRx.SystemReactive.1.0.0.0\lib\net35\UniRx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositeDisposableExtensions.cs" />
@@ -43,17 +55,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IteratorTasks\IteratorTasks.Extensions\IteratorTasks.Extensions.csproj">
-      <Project>{9aa09159-8567-4f4b-9871-24b43decf6af}</Project>
-      <Name>IteratorTasks.Extensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\IteratorTasks\IteratorTasks\IteratorTasks.csproj">
-      <Project>{6c013095-537e-428a-9632-f5b18ee0edca}</Project>
-      <Name>IteratorTasks</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\UniRx\Dlls\UniRx.Library\UniRx.Library.csproj">
-      <Project>{21c57e17-d4b8-4da4-a6a2-07d8b2e5b3bd}</Project>
-      <Name>UniRx.Library</Name>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\TaskLibraries\src\TaskLibraries\SystemAsync\SystemAsync.csproj">
+      <Project>{f861e95e-72c0-47e1-b282-f8fdbb79c8d9}</Project>
+      <Name>SystemAsync</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
