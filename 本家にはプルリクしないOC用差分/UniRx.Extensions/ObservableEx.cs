@@ -31,7 +31,7 @@ namespace UniRx
             };
         }
 
-        private static async Task ProcessSynchronouslyAsync<T>(Queue<T> queue , AsyncAction<T> onNext, CancellationToken ct)
+        private static async Task ProcessSynchronouslyAsync<T>(Queue<T> queue, AsyncAction<T> onNext, CancellationToken ct)
         {
             while (!ct.IsCancellationRequested)
             {
