@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using IteratorTasks;
+using System.Reactive;
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using SystemAsync;
 
 namespace UniRx
 {
@@ -17,7 +22,7 @@ namespace UniRx
         {
             var cts = new CancellationTokenSource();
             var queue = new Queue<T>();
-            Task.Run(ct => ProcessSynchronouslyIterator(queue, onNext, ct), cts);
+            ProcessSynchronouslyAsync(queue, onNext, cts.Token);
 
             return new CompositeDisposable
             {
@@ -26,21 +31,38 @@ namespace UniRx
             };
         }
 
-        private static IEnumerator ProcessSynchronouslyIterator<T>(Queue<T> queue , AsyncAction<T> onNext, CancellationToken ct)
+        private static async Task ProcessSynchronouslyAsync<T>(Queue<T> queue, AsyncAction<T> onNext, CancellationToken ct)
         {
             while (!ct.IsCancellationRequested)
             {
                 if (queue.Count == 0)
                 {
-                    yield return Task.Delay(TimeSpan.FromSeconds(1), ct);
+                    await Delay(TimeSpan.FromSeconds(1), ct);
                     continue;
                 }
 
                 var item = queue.Dequeue();
-                var task = onNext(item, ct);
-                yield return task;
-                task.ThrowIfException();
+                await onNext(item, ct);
             }
+        }
+
+        private static Task Delay(TimeSpan dueTime) => Delay(dueTime, CancellationToken.None);
+
+        private static Task Delay(TimeSpan dueTime, CancellationToken ct)
+        {
+            var tcs = new TaskCompletionSource<object>();
+
+            Timer t = null;
+            t = new Timer(_ =>
+            {
+                tcs.TrySetResult(null);
+                t.Dispose();
+            }, null, (int)dueTime.TotalMilliseconds, Timeout.Infinite);
+
+            if (ct != CancellationToken.None)
+                ct.Register(() => tcs.TrySetCanceled());
+
+            return tcs.Task;
         }
 
         public static void OnNext<T>(this IObserver<T> source)

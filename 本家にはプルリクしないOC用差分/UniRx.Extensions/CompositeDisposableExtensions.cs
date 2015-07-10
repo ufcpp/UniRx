@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reactive.Disposables;
 
 namespace UniRx
 {
