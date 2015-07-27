@@ -1,0 +1,115 @@
+{
+  "locked": false,
+  "version": 1,
+  "targets": {
+    ".NETFramework,Version=v3.5": {
+      "MinimumThreadingBridge/0.9.5": {
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "lib/net35/MinimumThreadingBridge.dll": {}
+        },
+        "runtime": {
+          "lib/net35/MinimumThreadingBridge.dll": {}
+        }
+      },
+      "UniRx.SystemReactive/1.0.1": {
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "lib/net35/UniRx.SystemReactive.dll": {}
+        },
+        "runtime": {
+          "lib/net35/UniRx.SystemReactive.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v3.5/win": {
+      "MinimumThreadingBridge/0.9.5": {
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "lib/net35/MinimumThreadingBridge.dll": {}
+        },
+        "runtime": {
+          "lib/net35/MinimumThreadingBridge.dll": {}
+        }
+      },
+      "UniRx.SystemReactive/1.0.1": {
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "lib/net35/UniRx.SystemReactive.dll": {}
+        },
+        "runtime": {
+          "lib/net35/UniRx.SystemReactive.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v3.5/win-anycpu": {
+      "MinimumThreadingBridge/0.9.5": {
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "lib/net35/MinimumThreadingBridge.dll": {}
+        },
+        "runtime": {
+          "lib/net35/MinimumThreadingBridge.dll": {}
+        }
+      },
+      "UniRx.SystemReactive/1.0.1": {
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "lib/net35/UniRx.SystemReactive.dll": {}
+        },
+        "runtime": {
+          "lib/net35/UniRx.SystemReactive.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MinimumThreadingBridge/0.9.5": {
+      "sha512": "QAs+v4exk/uc4ZFgrxvLY4nCy4E0FYe+UjvxhlUilOyEa1ai4DAa1+kgx4R0F6Pcphcvit6TVkkPB/13SPgKRg==",
+      "type": "Package",
+      "files": [
+        "_rels/.rels",
+        "MinimumThreadingBridge.nuspec",
+        "lib/net35/MinimumThreadingBridge.dll",
+        "lib/net35/MinimumThreadingBridge.pdb",
+        "lib/net45/MinimumThreadingBridge.dll",
+        "lib/net45/MinimumThreadingBridge.pdb",
+        "package/services/metadata/core-properties/8b9e66a3eae547e8acb96b2c60404f84.psmdcp",
+        "[Content_Types].xml"
+      ]
+    },
+    "UniRx.SystemReactive/1.0.1": {
+      "sha512": "Pzk5jVN3Xb+AQr4UZiPATBnOlM2HHOoH0QpCdSXgj23umvrzivWW5fcJyEy6ucgrqNVCM5ZzYRgKKs2vCuJy/w==",
+      "type": "Package",
+      "files": [
+        "_rels/.rels",
+        "UniRx.SystemReactive.nuspec",
+        "lib/net35/UniRx.SystemReactive.dll",
+        "lib/net35/UniRx.SystemReactive.pdb",
+        "lib/net45/UniRx.SystemReactive.dll",
+        "lib/net45/UniRx.SystemReactive.pdb",
+        "package/services/metadata/core-properties/f8d77e58f02d4a5dbdff71942b04cace.psmdcp",
+        "[Content_Types].xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "MinimumThreadingBridge >= 0.9.5",
+      "UniRx.SystemReactive >= 1.0.1.0"
+    ],
+    ".NETFramework,Version=v3.5": []
+  }
+}
