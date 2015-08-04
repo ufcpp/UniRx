@@ -21,7 +21,7 @@
     <DefineConstants>TRACE;DEBUG;SystemReactive</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>CSE0001</NoWarn>
+    <NoWarn>CSE0001, CSE0002, CSE0003</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
