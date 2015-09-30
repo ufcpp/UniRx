@@ -1,4 +1,4 @@
-{
+﻿{
   "frameworks": {
     "net35": {}
   },
@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "MinimumThreadingBridge": "0.9.8",
-    "UniRx.SystemReactive": "1.0.1.0"
+    "UniRx.SystemReactive": "1.0.1.1"
   }
 }
