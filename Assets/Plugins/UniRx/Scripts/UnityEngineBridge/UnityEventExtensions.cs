@@ -6,13 +6,28 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine.Events;
 
+
 namespace UniRx
 {
+#if SystemReactive
+    using System.Reactive.Linq;
+    using Observable = System.Reactive.Linq.Observable;
+#endif
+
     public static partial class UnityEventExtensions
     {
         public static IObservable<Unit> AsObservable(this UnityEngine.Events.UnityEvent unityEvent)
         {
-            return Observable.FromEvent<UnityAction>(h => new UnityAction(h), h => unityEvent.AddListener(h), h => unityEvent.RemoveListener(h));
+            var dummy = 0;
+            return Observable.FromEvent<UnityAction>(h =>
+            {
+                dummy.GetHashCode(); // capture for AOT issue
+                return new UnityAction(h);
+            }, h => unityEvent.AddListener(h), h => unityEvent.RemoveListener(h))
+#if SystemReactive
+            .Select(_ => Unit.Default)
+#endif
+            ;
         }
 
         public static IObservable<T> AsObservable<T>(this UnityEngine.Events.UnityEvent<T> unityEvent)

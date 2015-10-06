@@ -1,8 +1,14 @@
 ﻿using System;
 
+#if SystemReactive
+using System.Reactive.Concurrency;
+
+namespace System.Reactive.Linq
+#else
 namespace UniRx.Operators
+#endif
 {
-    internal class TimeIntervalObservable<T> : OperatorObservableBase<UniRx.TimeInterval<T>>
+    internal class TimeIntervalObservable<T> : OperatorObservableBase<TimeInterval<T>>
     {
         readonly IObservable<T> source;
         readonly IScheduler scheduler;
@@ -14,17 +20,17 @@ namespace UniRx.Operators
             this.scheduler = scheduler;
         }
 
-        protected override IDisposable SubscribeCore(IObserver<UniRx.TimeInterval<T>> observer, IDisposable cancel)
+        protected override IDisposable SubscribeCore(IObserver<TimeInterval<T>> observer, IDisposable cancel)
         {
             return source.Subscribe(new TimeInterval(this, observer, cancel));
         }
 
-        class TimeInterval : OperatorObserverBase<T, UniRx.TimeInterval<T>>
+        class TimeInterval : OperatorObserverBase<T, TimeInterval<T>>
         {
             readonly TimeIntervalObservable<T> parent;
             DateTimeOffset lastTime;
 
-            public TimeInterval(TimeIntervalObservable<T> parent, IObserver<UniRx.TimeInterval<T>> observer, IDisposable cancel)
+            public TimeInterval(TimeIntervalObservable<T> parent, IObserver<TimeInterval<T>> observer, IDisposable cancel)
                 : base(observer, cancel)
             {
                 this.parent = parent;
@@ -37,7 +43,7 @@ namespace UniRx.Operators
                 var span = now.Subtract(lastTime);
                 lastTime = now;
 
-                base.observer.OnNext(new UniRx.TimeInterval<T>(value, span));
+                base.observer.OnNext(new TimeInterval<T>(value, span));
             }
 
             public override void OnError(Exception error)

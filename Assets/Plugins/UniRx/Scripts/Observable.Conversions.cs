@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using UniRx.Operators;
 
 #if SystemReactive
-namespace System.Reactive
+using System.Reactive.Concurrency;
+
+namespace System.Reactive.Linq
 #else
+using UniRx.Operators;
+
 namespace UniRx
 #endif
 {
@@ -15,7 +18,7 @@ namespace UniRx
             if (source == null) throw new ArgumentNullException("source");
 
             // optimize, don't double wrap
-            if (source is UniRx.Operators.AsObservableObservable<T>)
+            if (source is AsObservableObservable<T>)
             {
                 return source;
             }
