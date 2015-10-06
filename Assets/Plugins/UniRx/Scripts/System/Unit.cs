@@ -2,7 +2,11 @@
 
 using System;
 
+#if SystemReactive
+namespace System
+#else
 namespace UniRx
+#endif
 {
     [Serializable]
     public struct Unit : IEquatable<Unit>

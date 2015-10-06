@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections;
 
+#if SystemReactive
+namespace System.Reactive.Disposables
+#else
 namespace UniRx
+#endif
 {
     public sealed class MultipleAssignmentDisposable : IDisposable, ICancelable
     {
@@ -28,7 +32,11 @@ namespace UniRx
                 lock (gate)
                 {
                     return (current == True)
+#if SystemReactive
+                        ? System.Reactive.Disposables.Disposable.Empty
+#else
                         ? UniRx.Disposable.Empty
+#endif
                         : current;
                 }
             }

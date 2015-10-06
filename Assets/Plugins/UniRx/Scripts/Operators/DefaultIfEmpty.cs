@@ -1,7 +1,10 @@
 ﻿using System;
-using UniRx.Operators;
 
+#if SystemReactive
+namespace System.Reactive.Linq
+#else
 namespace UniRx.Operators
+#endif
 {
     internal class DefaultIfEmptyObservable<T> : OperatorObservableBase<T>
     {

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UniRx.InternalUtil;
 
+#if SystemReactive
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
+#endif
+
 namespace UniRx
 {
     public interface IMessagePublisher

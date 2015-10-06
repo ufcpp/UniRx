@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+
+#if SystemReactive
+using System.Reactive.Concurrency;
+
+namespace System.Reactive.Linq
+#else
 using UniRx.Operators;
 
 namespace UniRx
+#endif
 {
     // concatenate multiple observable
     // merge, concat, zip...

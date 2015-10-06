@@ -1,6 +1,12 @@
 ﻿using System;
 
+#if SystemReactive
+using System.Reactive.Disposables;
+
+namespace System.Reactive.Concurrency
+#else
 namespace UniRx
+#endif
 {
     public interface IScheduler
     {

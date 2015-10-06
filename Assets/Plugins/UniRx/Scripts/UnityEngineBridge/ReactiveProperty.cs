@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 #endif
 
+#if SystemReactive
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
+#endif
+
 namespace UniRx
 {
     public interface IReadOnlyReactiveProperty<T> : IObservable<T>

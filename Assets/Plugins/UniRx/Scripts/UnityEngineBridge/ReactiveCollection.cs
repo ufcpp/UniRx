@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
+#if SystemReactive
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
+#endif
+
 namespace UniRx
 {
     public struct CollectionAddEvent<T> : IEquatable<CollectionAddEvent<T>>

@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#if SystemReactive
+namespace System.Reactive.Linq
+#else
 namespace UniRx.Operators
+#endif
 {
     internal class ToArrayObservable<TSource> : OperatorObservableBase<TSource[]>
     {

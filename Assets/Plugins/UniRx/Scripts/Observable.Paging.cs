@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+
+#if SystemReactive
+using System.Reactive.Concurrency;
+namespace System.Reactive.Linq
+#else
 using UniRx.Operators;
 
 namespace UniRx
+#endif
 {
     // Take, Skip, etc..
     public static partial class Observable

@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Threading;
 
+#if SystemReactive
+namespace System.Reactive
+#else
 namespace UniRx
+#endif
 {
     public static class Observer
     {

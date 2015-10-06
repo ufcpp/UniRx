@@ -1,7 +1,15 @@
 ﻿using System;
+
+#if SystemReactive
+using System.Reactive.Concurrency;
+using System.Reactive.Disposables;
+
+namespace System.Reactive.Linq
+#else
 using UniRx.Operators;
 
 namespace UniRx.Operators
+#endif
 {
     internal class TakeObservable<T> : OperatorObservableBase<T>
     {

@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
+#if SystemReactive
+using System.Reactive.Subjects;
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx
 {
     public struct DictionaryAddEvent<TKey, TValue> : IEquatable<DictionaryAddEvent<TKey, TValue>>

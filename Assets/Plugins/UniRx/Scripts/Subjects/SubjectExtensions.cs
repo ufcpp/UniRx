@@ -1,6 +1,12 @@
 ﻿using System;
 
+#if SystemReactive
+using System.Reactive.Linq;
+
+namespace System.Reactive.Subjects
+#else
 namespace UniRx
+#endif
 {
     public static class SubjectExtensions
     {

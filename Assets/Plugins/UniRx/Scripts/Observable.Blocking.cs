@@ -1,6 +1,10 @@
 ﻿using System;
 
+#if SystemReactive
+namespace System.Reactive
+#else
 namespace UniRx
+#endif
 {
     public static partial class Observable
     {

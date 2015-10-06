@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UniRx.Operators;
 
+#if SystemReactive
+namespace System.Reactive
+#else
 namespace UniRx
+#endif
 {
     public static partial class Observable
     {

@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#if SystemReactive
+namespace System.Reactive
+#else
 namespace UniRx
+#endif
 {
     // Pair is used for Observable.Pairwise
     [Serializable]

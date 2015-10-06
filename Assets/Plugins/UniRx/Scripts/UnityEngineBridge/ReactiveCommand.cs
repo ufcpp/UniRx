@@ -1,5 +1,11 @@
 ﻿using System;
 
+#if SystemReactive
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
+#endif
+
 namespace UniRx
 {
     public interface IReactiveCommand<T> : IObservable<T>

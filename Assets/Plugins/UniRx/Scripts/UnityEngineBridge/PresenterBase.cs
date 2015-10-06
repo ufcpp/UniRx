@@ -14,6 +14,9 @@ namespace UniRx
     // Start(Capture phase)  : Parent to Child, pass argument
     // Start(Bubbling phase) : Child to Parent, initialize(like constructor)
 
+#if SystemReactive
+    using Observable = System.Reactive.Linq.Observable;
+#endif
     /// <summary>
     /// [Obsolete]Infrastructure interface for PresenterBase`T
     /// </summary>

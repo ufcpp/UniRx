@@ -1,7 +1,13 @@
 ﻿using System;
-using UniRx.Operators;
 
+#if SystemReactive
+using System.Reactive.Concurrency;
+using System.Reactive.Disposables;
+
+namespace System.Reactive.Linq
+#else
 namespace UniRx.Operators
+#endif
 {
     internal class SkipObservable<T> : OperatorObservableBase<T>
     {

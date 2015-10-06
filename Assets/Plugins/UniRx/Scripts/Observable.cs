@@ -4,7 +4,11 @@ using System.Collections.Generic;
 using System.Threading;
 using UniRx.Operators;
 
+#if SystemReactive
+namespace System.Reactive
+#else
 namespace UniRx
+#endif
 {
     // Standard Query Operators
 

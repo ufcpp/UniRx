@@ -1,6 +1,11 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+
+#if SystemReactive
+using System.Reactive.Subjects;
+using System.Reactive.Disposables;
+#endif
 
 namespace UniRx
 {
