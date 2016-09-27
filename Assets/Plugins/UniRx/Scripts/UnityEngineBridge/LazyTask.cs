@@ -99,11 +99,7 @@ namespace UniRx
             var coroutine = source.StartAsCoroutine(
                 onResult: x => { result = x; Status = TaskStatus.Completed; },
                 onError: ex => { Exception = ex; Status = TaskStatus.Faulted; },
-#if SystemReactive
-                cancel: cancellation.ToCancellationToken());
-#else
                 cancel: new CancellationToken(cancellation));
-#endif
             return coroutine;
         }
 

@@ -2,8 +2,13 @@
 
 #if UniRxLibrary
 using UnityObservable = UniRx.ObservableUnity;
+using System.Reactive.Disposables;
 #else
 using UnityObservable = UniRx.Observable;
+#endif
+
+#if SystemReactive
+using System.Reactive.Linq;
 #endif
 
 namespace UniRx.Operators

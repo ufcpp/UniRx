@@ -3,9 +3,6 @@ using UnityEngine;
 
 #if SystemReactive
 using System.Reactive;
-#endif
-
-#if SystemReactive
 using System.Reactive.Subjects;
 #endif
 

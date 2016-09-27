@@ -2,6 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
+#if SystemReactive
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx.Operators
 {
     internal class DelayFrameObservable<T> : OperatorObservableBase<T>

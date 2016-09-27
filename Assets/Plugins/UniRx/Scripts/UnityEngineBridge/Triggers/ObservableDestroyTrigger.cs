@@ -1,6 +1,12 @@
 ﻿using System; // require keep for Windows Universal App
 using UnityEngine;
 
+#if SystemReactive
+using System.Reactive.Subjects;
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx.Triggers
 {
     [DisallowMultipleComponent]

@@ -6,6 +6,11 @@ using UnityObservable = UniRx.ObservableUnity;
 using UnityObservable = UniRx.Observable;
 #endif
 
+#if SystemReactive
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx.Operators
 {
     internal class ThrottleFrameObservable<T> : OperatorObservableBase<T>

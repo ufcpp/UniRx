@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections;
 
+#if SystemReactive
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx.Operators
 {
     internal class FromCoroutineObservable<T> : OperatorObservableBase<T>

@@ -6,8 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 #if SystemReactive
-using System.Reactive;
-using System.Threading;
+using System.Reactive.Linq;
 #endif
 
 namespace UniRx

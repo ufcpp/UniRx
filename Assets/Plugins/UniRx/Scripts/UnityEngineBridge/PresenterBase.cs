@@ -1,6 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
+#if SystemReactive
+using System.Reactive.Subjects;
+#endif
+
 /*
 PresenterBase works enough, but too complex.
 You can use simple Initialize method and call parent to child, it works for most scenario.

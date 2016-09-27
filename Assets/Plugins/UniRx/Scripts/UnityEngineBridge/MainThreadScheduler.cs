@@ -5,6 +5,11 @@ using System.Text;
 using System.Threading;
 using UnityEngine;
 
+#if SystemReactive
+using System.Reactive.Concurrency;
+using System.Reactive.Disposables;
+#endif
+
 namespace UniRx
 {
 #if UniRxLibrary

@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#if SystemReactive
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx.Operators
 {
     internal class BatchFrameObservable<T> : OperatorObservableBase<IList<T>>

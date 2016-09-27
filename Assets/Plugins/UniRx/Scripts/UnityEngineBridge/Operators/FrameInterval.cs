@@ -1,5 +1,9 @@
 ﻿using System;
 
+#if SystemReactive
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx.Operators
 {
     internal class FrameIntervalObservable<T> : OperatorObservableBase<UniRx.FrameInterval<T>>

@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UniRx.Triggers;
 using UnityEngine;
 
+#if SystemReactive
+using System.Reactive.Disposables;
+#endif
+
 namespace UniRx
 {
     public static partial class DisposableExtensions

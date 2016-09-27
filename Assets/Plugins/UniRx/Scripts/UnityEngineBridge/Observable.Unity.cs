@@ -12,6 +12,11 @@ using UnityEngine;
 using SchedulerUnity = UniRx.Scheduler;
 #endif
 
+#if SystemReactive
+using System.Reactive;
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx
 {
     public enum FrameCountType
@@ -1083,12 +1088,12 @@ namespace UniRx
             return new UniRx.Operators.RepeatUntilObservable<T>(sources, trigger, lifeTimeChecker);
         }
 
-        public static IObservable<UniRx.FrameInterval<T>> FrameInterval<T>(this IObservable<T> source)
+        public static IObservable<FrameInterval<T>> FrameInterval<T>(this IObservable<T> source)
         {
             return new UniRx.Operators.FrameIntervalObservable<T>(source);
         }
 
-        public static IObservable<UniRx.TimeInterval<T>> FrameTimeInterval<T>(this IObservable<T> source, bool ignoreTimeScale = false)
+        public static IObservable<TimeInterval<T>> FrameTimeInterval<T>(this IObservable<T> source, bool ignoreTimeScale = false)
         {
             return new UniRx.Operators.FrameTimeIntervalObservable<T>(source, ignoreTimeScale);
         }
@@ -1156,4 +1161,26 @@ namespace UniRx
         }
 #endif
     }
+
+#if SystemReactive
+    internal static class Stubs<T>
+    {
+        public static readonly Action<T> Ignore = (T t) => { };
+        public static readonly Func<T, T> Identity = (T t) => t;
+        public static readonly Action<Exception, T> Throw = (ex, _) => { throw ex; };
+    }
+
+    internal static class Stubs<T1, T2>
+    {
+        public static readonly Action<T1, T2> Ignore = (x, y) => { };
+        public static readonly Action<Exception, T1, T2> Throw = (ex, _, __) => { throw ex; };
+    }
+
+
+    internal static class Stubs<T1, T2, T3>
+    {
+        public static readonly Action<T1, T2, T3> Ignore = (x, y, z) => { };
+        public static readonly Action<Exception, T1, T2, T3> Throw = (ex, _, __, ___) => { throw ex; };
+    }
+#endif
 }
