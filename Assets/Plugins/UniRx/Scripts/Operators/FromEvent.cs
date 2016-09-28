@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 
 #if SystemReactive
+using UniRx;
+
 using System.Reactive.Disposables;
 
 namespace System.Reactive.Linq

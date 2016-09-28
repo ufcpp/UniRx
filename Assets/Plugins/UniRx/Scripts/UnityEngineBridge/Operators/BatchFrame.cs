@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 #if SystemReactive
+using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 #endif

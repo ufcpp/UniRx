@@ -5,6 +5,7 @@ using System;
 using UnityEngine;
 
 #if SystemReactive
+using System.Reactive;
 using System.Reactive.Subjects;
 using System.Threading;
 #endif

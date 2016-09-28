@@ -15,6 +15,7 @@ using SchedulerUnity = UniRx.Scheduler;
 #if SystemReactive
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Threading;
 #endif
 
 namespace UniRx
@@ -860,7 +861,11 @@ namespace UniRx
         /// </summary>
         public static ObservableYieldInstruction<T> ToYieldInstruction<T>(this IObservable<T> source)
         {
+#if SystemReactive
+            return new ObservableYieldInstruction<T>(source, true, CancellationToken.None);
+#else
             return new ObservableYieldInstruction<T>(source, true, CancellationToken.Empty);
+#endif
         }
 
         /// <summary>
@@ -880,7 +885,11 @@ namespace UniRx
         /// </summary>
         public static ObservableYieldInstruction<T> ToYieldInstruction<T>(this IObservable<T> source, bool throwOnError)
         {
+#if SystemReactive
+            return new ObservableYieldInstruction<T>(source, throwOnError, CancellationToken.None);
+#else
             return new ObservableYieldInstruction<T>(source, throwOnError, CancellationToken.Empty);
+#endif
         }
 
         /// <summary>

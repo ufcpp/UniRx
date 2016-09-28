@@ -4,6 +4,8 @@ using System.Text;
 using System.Linq;
 
 #if SystemReactive
+using UniRx;
+
 using System.Reactive.Concurrency;
 
 namespace System.Reactive.Linq

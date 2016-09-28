@@ -1,5 +1,7 @@
 ﻿using System;
 
+#if !SystemReactive
+
 #if SystemReactive
 using System.Reactive.Disposables;
 #endif
@@ -34,3 +36,5 @@ namespace UniRx
         }
     }
 }
+
+#endif

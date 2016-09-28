@@ -2,6 +2,7 @@
 using UnityEngine;
 
 #if SystemReactive
+using System.Reactive;
 using System.Reactive.Subjects;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;

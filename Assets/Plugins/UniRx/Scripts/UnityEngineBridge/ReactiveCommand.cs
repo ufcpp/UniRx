@@ -1,6 +1,7 @@
 ﻿using System;
 
 #if SystemReactive
+using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;

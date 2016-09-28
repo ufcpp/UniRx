@@ -7,7 +7,7 @@
     <ProjectGuid>{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UniRx</RootNamespace>
+    <RootNamespace>System.Reactive</RootNamespace>
     <AssemblyName>UniRx</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -476,6 +476,7 @@
       <Link>UnityEngineBridge\ReactiveProperty.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

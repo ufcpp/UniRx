@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 #if SystemReactive
+using UniRx;
 using System.Reactive.Concurrency;
 
 namespace System.Reactive.Linq

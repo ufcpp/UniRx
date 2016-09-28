@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using System.Linq; // in future, should remove LINQ
 using UnityEngine;
 
-#if SystemReactive
-using System.Threading;
-using System.Reactive.Disposables;
-#endif
+#if !SystemReactive
 
 namespace UniRx
 {
@@ -139,3 +136,5 @@ namespace UniRx
         }
     }
 }
+
+#endif

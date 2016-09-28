@@ -4,11 +4,7 @@
 
 using System;
 
-#if SystemReactive
-namespace System
-#else
 namespace UniRx
-#endif
 {
     public interface IProgress<T>
     {

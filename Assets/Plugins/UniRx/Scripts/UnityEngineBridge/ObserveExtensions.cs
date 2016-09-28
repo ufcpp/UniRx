@@ -8,6 +8,7 @@ using ObservableUnity = UniRx.Observable;
 #endif
 
 #if SystemReactive
+using System.Threading;
 using System.Reactive.Linq;
 #endif
 

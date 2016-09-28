@@ -1,6 +1,8 @@
 ﻿using System;
 
 #if SystemReactive
+using UniRx;
+
 using System.Reactive.Concurrency;
 using System.Reactive.Subjects;
 

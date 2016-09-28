@@ -10,6 +10,7 @@ using UnityEngine.Events;
 namespace UniRx
 {
 #if SystemReactive
+    using System.Reactive;
     using System.Reactive.Linq;
     using Observable = System.Reactive.Linq.Observable;
 #endif

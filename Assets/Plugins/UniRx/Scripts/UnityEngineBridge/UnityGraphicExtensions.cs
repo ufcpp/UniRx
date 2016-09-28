@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 #if SystemReactive
+using System.Reactive;
 using System.Reactive.Disposables;
 #endif
 

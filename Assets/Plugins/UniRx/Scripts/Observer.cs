@@ -3,7 +3,7 @@ using System.Threading;
 
 #if SystemReactive
 using System.Reactive.Linq;
-namespace System.Reactive.Linq
+namespace System
 #else
 using UniRx.Operators;
 
