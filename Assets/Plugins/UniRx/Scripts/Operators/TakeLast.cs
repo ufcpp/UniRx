@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using UniRx.Operators;
 
+#if SystemReactive
+using System.Reactive.Concurrency;
+
+namespace System.Reactive.Linq
+#else
 namespace UniRx.Operators
+#endif
 {
     internal class TakeLastObservable<T> : OperatorObservableBase<T>
     {

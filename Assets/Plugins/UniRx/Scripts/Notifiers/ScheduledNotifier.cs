@@ -1,5 +1,10 @@
 ﻿using System;
 
+#if SystemReactive
+using System.Reactive.Concurrency;
+using System.Reactive.Subjects;
+#endif
+
 namespace UniRx
 {
     /// <summary>

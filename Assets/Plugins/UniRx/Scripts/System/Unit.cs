@@ -2,6 +2,7 @@
 
 using System;
 
+#if !SystemReactive
 namespace UniRx
 {
     [Serializable]
@@ -41,3 +42,4 @@ namespace UniRx
         }
     }
 }
+#endif

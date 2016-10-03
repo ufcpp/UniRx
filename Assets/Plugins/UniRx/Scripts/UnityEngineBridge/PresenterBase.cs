@@ -1,6 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
+#if SystemReactive
+using System.Reactive;
+using System.Reactive.Subjects;
+#endif
+
 /*
 PresenterBase works enough, but too complex.
 You can use simple Initialize method and call parent to child, it works for most scenario.
@@ -14,6 +19,9 @@ namespace UniRx
     // Start(Capture phase)  : Parent to Child, pass argument
     // Start(Bubbling phase) : Child to Parent, initialize(like constructor)
 
+#if SystemReactive
+    using Observable = System.Reactive.Linq.Observable;
+#endif
     /// <summary>
     /// [Obsolete]Infrastructure interface for PresenterBase`T
     /// </summary>

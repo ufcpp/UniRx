@@ -5,8 +5,17 @@ using System;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+#if SystemReactive
+using System.Reactive;
+using System.Reactive.Disposables;
+#endif
+
 namespace UniRx
 {
+#if SystemReactive
+    using Observable = System.Reactive.Linq.Observable;
+#endif
+
     public static partial class UnityGraphicExtensions
     {
         public static IObservable<Unit> DirtyLayoutCallbackAsObservable(this Graphic graphic)

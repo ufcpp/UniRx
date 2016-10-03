@@ -1,7 +1,14 @@
 ﻿using System;
+
+#if SystemReactive
+using UniRx;
+
+namespace System.Reactive.Linq
+#else
 using UniRx.Operators;
 
 namespace UniRx
+#endif
 {
     public static partial class Observable
     {

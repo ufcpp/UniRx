@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using UniRx.InternalUtil;
 
+#if SystemReactive
+using System.Reactive.Disposables;
+
+namespace System.Reactive.Subjects
+#else
 namespace UniRx
+#endif
 {
-    public sealed class AsyncSubject<T> : ISubject<T>, IOptimizedObservable<T>, IDisposable
+    public sealed class AsyncSubject<T> : ISubject<T>, IDisposable
+#if !SystemReactive
+        , IOptimizedObservable<T>
+#endif
     {
         object observerLock = new object();
 

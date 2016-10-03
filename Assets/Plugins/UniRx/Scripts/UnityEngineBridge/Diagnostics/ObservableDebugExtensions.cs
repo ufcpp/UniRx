@@ -1,4 +1,9 @@
-﻿namespace UniRx.Diagnostics
+﻿#if SystemReactive
+using System;
+using System.Reactive.Linq;
+#endif
+
+namespace UniRx.Diagnostics
 {
     public static class ObservableDebugExtensions
     {

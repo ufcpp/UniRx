@@ -1,8 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+
+#if SystemReactive
+using System.Reactive.Concurrency;
+using System.Reactive.Disposables;
+
+namespace System.Reactive.Linq
+#else
 using UniRx.Operators;
 
 namespace UniRx.Operators
+#endif
 {
     internal class BufferObservable<T> : OperatorObservableBase<IList<T>>
     {

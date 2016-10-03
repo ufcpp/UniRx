@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
+#if SystemReactive
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
+using TUnit = System.Reactive.Unit;
+#else
+using TUnit = UniRx.Unit;
+#endif
+
 namespace UniRx
 {
     public struct CollectionAddEvent<T> : IEquatable<CollectionAddEvent<T>>
@@ -132,7 +140,7 @@ namespace UniRx
         IObservable<CollectionMoveEvent<T>> ObserveMove();
         IObservable<CollectionRemoveEvent<T>> ObserveRemove();
         IObservable<CollectionReplaceEvent<T>> ObserveReplace();
-        IObservable<Unit> ObserveReset();
+        IObservable<TUnit> ObserveReset();
     }
 
     public interface IReactiveCollection<T> : IList<T>, IReadOnlyReactiveCollection<T>
@@ -173,7 +181,7 @@ namespace UniRx
             var beforeCount = Count;
             base.ClearItems();
 
-            if (collectionReset != null) collectionReset.OnNext(Unit.Default);
+            if (collectionReset != null) collectionReset.OnNext(TUnit.Default);
             if (beforeCount > 0)
             {
                 if (countChanged != null) countChanged.OnNext(Count);
@@ -238,11 +246,11 @@ namespace UniRx
         }
 
         [NonSerialized]
-        Subject<Unit> collectionReset = null;
-        public IObservable<Unit> ObserveReset()
+        Subject<TUnit> collectionReset = null;
+        public IObservable<TUnit> ObserveReset()
         {
-            if (isDisposed) return Observable.Empty<Unit>();
-            return collectionReset ?? (collectionReset = new Subject<Unit>());
+            if (isDisposed) return Observable.Empty<TUnit>();
+            return collectionReset ?? (collectionReset = new Subject<TUnit>());
         }
 
         [NonSerialized]

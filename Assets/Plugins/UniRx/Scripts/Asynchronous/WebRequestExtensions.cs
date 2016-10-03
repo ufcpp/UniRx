@@ -6,6 +6,11 @@ using System.Net;
 using System.Text;
 using System.Threading;
 
+#if SystemReactive
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx
 {
     public static class WebRequestExtensions

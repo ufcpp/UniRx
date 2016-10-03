@@ -1,6 +1,12 @@
 ﻿using System;
 
+#if SystemReactive
+using UniRx;
+
+namespace System.Reactive.Linq
+#else
 namespace UniRx.Operators
+#endif
 {
     internal class AsUnitObservableObservable<T> : OperatorObservableBase<Unit>
     {

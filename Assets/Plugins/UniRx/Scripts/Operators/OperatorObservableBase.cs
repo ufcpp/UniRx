@@ -1,9 +1,19 @@
 ﻿using System;
 
+#if SystemReactive
+using System.Reactive.Concurrency;
+using System.Reactive.Disposables;
+
+namespace System.Reactive.Linq
+#else
 namespace UniRx.Operators
+#endif
 {
     // implements note : all field must be readonly.
-    public abstract class OperatorObservableBase<T> : IObservable<T>, IOptimizedObservable<T>
+    public abstract class OperatorObservableBase<T> : IObservable<T>
+#if !SystemReactive
+        , IOptimizedObservable<T>
+#endif
     {
         readonly bool isRequiredSubscribeOnCurrentThread;
 

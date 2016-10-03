@@ -7,6 +7,11 @@ using UniRx.Triggers;
 using ObservableUnity = UniRx.Observable;
 #endif
 
+#if SystemReactive
+using System.Threading;
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx
 {
     public static partial class ObserveExtensions

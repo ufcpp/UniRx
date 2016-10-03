@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#if SystemReactive
+namespace System.Reactive.Disposables
+#else
 namespace UniRx
+#endif
 {
     public sealed class DictionaryDisposable<TKey, TValue> : IDisposable, IDictionary<TKey, TValue>
         where TValue : IDisposable

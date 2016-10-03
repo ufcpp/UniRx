@@ -1,8 +1,16 @@
 ﻿using System; // require keep for Windows Universal App
 using UnityEngine;
 
+#if SystemReactive
+using System.Reactive;
+#endif
+
 namespace UniRx.Triggers
 {
+#if SystemReactive
+    using Observable = System.Reactive.Linq.Observable;
+#endif
+
     // for GameObject
     public static partial class ObservableTriggerExtensions
     {

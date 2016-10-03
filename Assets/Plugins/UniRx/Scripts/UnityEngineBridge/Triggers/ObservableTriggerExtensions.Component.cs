@@ -5,6 +5,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 #endif
 
+#if SystemReactive
+using System.Reactive;
+using System.Reactive.Linq;
+#endif
+
 namespace UniRx.Triggers
 {
     // for Component

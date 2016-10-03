@@ -1,5 +1,11 @@
 ﻿using System;
 
+#if !SystemReactive
+
+#if SystemReactive
+using System.Reactive.Disposables;
+#endif
+
 namespace UniRx
 {
     public struct CancellationToken
@@ -30,3 +36,5 @@ namespace UniRx
         }
     }
 }
+
+#endif

@@ -1,7 +1,12 @@
 ﻿using System;
-using UniRx.Operators;
 
+#if SystemReactive
+using UniRx;
+
+namespace System.Reactive.Linq
+#else
 namespace UniRx.Operators
+#endif
 {
     internal class ForEachAsyncObservable<T> : OperatorObservableBase<Unit>
     {

@@ -1,7 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#if SystemReactive
+using System.Reactive.Disposables;
+
+namespace System.Reactive.Linq
+#else
 namespace UniRx.Operators
+#endif
 {
     internal class AmbObservable<T> : OperatorObservableBase<T>
     {

@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+
+#if SystemReactive
+using System.Reactive.Concurrency;
+namespace System.Reactive.Linq
+#else
 using UniRx.Operators;
 
 namespace UniRx
+#endif
 {
     // Take, Skip, etc..
     public static partial class Observable
@@ -231,6 +237,22 @@ namespace UniRx
             return new LastObservable<T>(source, predicate, true);
         }
 
+#if SystemReactive
+        public static IObservable<T> FirstAsync<T>(this IObservable<T> source)
+        {
+            return new FirstObservable<T>(source, false);
+        }
+        public static IObservable<T> FirstAsync<T>(this IObservable<T> source, Func<T, bool> predicate)
+        {
+            return new FirstObservable<T>(source, predicate, false);
+        }
+
+        [Obsolete]
+        public static IObservable<T> First<T>(this IObservable<T> source) { throw new NotImplementedException(); }
+
+        [Obsolete]
+        public static IObservable<T> First<T>(this IObservable<T> source, Func<T, bool> predicate) { throw new NotImplementedException(); }
+#else
         public static IObservable<T> First<T>(this IObservable<T> source)
         {
             return new FirstObservable<T>(source, false);
@@ -239,12 +261,12 @@ namespace UniRx
         {
             return new FirstObservable<T>(source, predicate, false);
         }
+#endif
 
         public static IObservable<T> FirstOrDefault<T>(this IObservable<T> source)
         {
             return new FirstObservable<T>(source, true);
         }
-
         public static IObservable<T> FirstOrDefault<T>(this IObservable<T> source, Func<T, bool> predicate)
         {
             return new FirstObservable<T>(source, predicate, true);

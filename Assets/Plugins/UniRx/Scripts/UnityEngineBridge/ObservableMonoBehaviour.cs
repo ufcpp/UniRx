@@ -3,8 +3,16 @@
 using System;
 using UnityEngine;
 
+#if SystemReactive
+using System.Reactive;
+using System.Reactive.Subjects;
+#endif
+
 namespace UniRx
 {
+#if SystemReactive
+    using Observable = System.Reactive.Linq.Observable;
+#endif
     /// <summary>
     /// <para>Note: TypedMonoBehaviour and ObservableMonoBehaviour cause some performance issues.</para>
     /// <para>This is legacy interface.</para>

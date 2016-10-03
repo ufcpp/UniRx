@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
+#if SystemReactive
+using System.Reactive.Subjects;
+#endif
+
 namespace UniRx
 {
     /// <summary>

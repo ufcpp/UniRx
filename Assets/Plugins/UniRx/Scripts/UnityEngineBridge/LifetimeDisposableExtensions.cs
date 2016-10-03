@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UniRx.Triggers;
 using UnityEngine;
 
+#if SystemReactive
+using System.Reactive.Disposables;
+#endif
+
 namespace UniRx
 {
     public static partial class DisposableExtensions
@@ -74,7 +78,8 @@ namespace UniRx
         public static T AddTo<T>(this T disposable, ICollection<IDisposable> container, GameObject gameObject)
             where T : IDisposable
         {
-            return disposable.AddTo(container).AddTo(gameObject);
+            return disposable.AddTo(container)
+                .AddTo(gameObject);
         }
 
         /// <summary>
@@ -84,7 +89,8 @@ namespace UniRx
         public static T AddTo<T>(this T disposable, ICollection<IDisposable> container, Component gameObjectComponent)
             where T : IDisposable
         {
-            return disposable.AddTo(container).AddTo(gameObjectComponent);
+            return disposable.AddTo(container)
+                .AddTo(gameObjectComponent);
         }
     }
 }

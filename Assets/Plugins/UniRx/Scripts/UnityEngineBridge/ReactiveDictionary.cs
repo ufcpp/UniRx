@@ -3,6 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
+#if SystemReactive
+using System.Reactive.Subjects;
+using System.Reactive.Linq;
+using TUnit = System.Reactive.Unit;
+#else
+using TUnit = UniRx.Unit;
+#endif
+
 namespace UniRx
 {
     public struct DictionaryAddEvent<TKey, TValue> : IEquatable<DictionaryAddEvent<TKey, TValue>>
@@ -103,7 +111,7 @@ namespace UniRx
         IObservable<int> ObserveCountChanged();
         IObservable<DictionaryRemoveEvent<TKey, TValue>> ObserveRemove();
         IObservable<DictionaryReplaceEvent<TKey, TValue>> ObserveReplace();
-        IObservable<Unit> ObserveReset();
+        IObservable<TUnit> ObserveReset();
     }
 
     public interface IReactiveDictionary<TKey, TValue> : IReadOnlyReactiveDictionary<TKey, TValue>, IDictionary<TKey, TValue>
@@ -200,7 +208,7 @@ namespace UniRx
             var beforeCount = Count;
             inner.Clear();
 
-            if (collectionReset != null) collectionReset.OnNext(Unit.Default);
+            if (collectionReset != null) collectionReset.OnNext(TUnit.Default);
             if (beforeCount > 0)
             {
                 if (countChanged != null) countChanged.OnNext(Count);
@@ -297,11 +305,11 @@ namespace UniRx
         }
 
         [NonSerialized]
-        Subject<Unit> collectionReset = null;
-        public IObservable<Unit> ObserveReset()
+        Subject<TUnit> collectionReset = null;
+        public IObservable<TUnit> ObserveReset()
         {
-            if (isDisposed) return Observable.Empty<Unit>();
-            return collectionReset ?? (collectionReset = new Subject<Unit>());
+            if (isDisposed) return Observable.Empty<TUnit>();
+            return collectionReset ?? (collectionReset = new Subject<TUnit>());
         }
 
         [NonSerialized]

@@ -1,8 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+
+#if SystemReactive
+using UniRx;
+using System.Reactive.Concurrency;
+
+namespace System.Reactive.Linq
+#else
 using UniRx.Operators;
 
 namespace UniRx
+#endif
 {
     public static partial class Observable
     {
@@ -11,7 +19,7 @@ namespace UniRx
             if (source == null) throw new ArgumentNullException("source");
 
             // optimize, don't double wrap
-            if (source is UniRx.Operators.AsObservableObservable<T>)
+            if (source is AsObservableObservable<T>)
             {
                 return source;
             }

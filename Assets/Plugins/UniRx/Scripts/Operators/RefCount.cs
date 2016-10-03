@@ -1,7 +1,15 @@
 ﻿using System;
+
+#if SystemReactive
+using System.Reactive.Disposables;
+using System.Reactive.Subjects;
+
+namespace System.Reactive.Linq
+#else
 using UniRx.Operators;
 
 namespace UniRx.Operators
+#endif
 {
     internal class RefCountObservable<T> : OperatorObservableBase<T>
     {
