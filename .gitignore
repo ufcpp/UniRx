@@ -16,6 +16,9 @@ TestResults
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
+*.lock.json
+*.nuget.targets
+.vs
 
 # VS2013
 
