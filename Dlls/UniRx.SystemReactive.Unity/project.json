@@ -7,7 +7,7 @@
     "win-anycpu": {}
   },
   "dependencies": {
-    "MinimumThreadingBridge": "0.9.8",
+    "MinimumThreadingBridge": "0.9.8.2",
     "UniRx.SystemReactive": "1.0.2.10"
   }
 }
