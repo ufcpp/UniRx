@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>UniRx.SystemReactive</id>
-    <version>1.0.2.11</version>
+    <version>1.0.3.0</version>
     <title>UniRx.SystemReactive</title>
     <authors>OrangeCube</authors>
     <owners>OranbeCube</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/OrangeCube/UniRx</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>update dependency</description>
-    <releaseNotes>Initial release.</releaseNotes>
+    <releaseNotes>Update MinimumThreadingBridge</releaseNotes>
     <copyright>OrangeCube</copyright>
     <tags>UniRx, Rx, reactive extensions</tags>
     <frameworkAssemblies>
