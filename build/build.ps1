@@ -1,9 +1,5 @@
 ﻿param([hashtable] $set)
 
-Push-Location $PSScriptRoot
-
-. .\Get-MSBuildPath.ps1
-
 if ($set -eq $null)
 {
     $set = @{}
@@ -11,69 +7,52 @@ if ($set -eq $null)
 
 if ($Script:msbuild -eq $null)
 {
-    $Script:msbuild = Get-MSBuildPath
+    $Script:msbuild = ../../OcBcl/build/Get-VsPath.ps1
 }
 
-function Invoke-Build
+function build
 {
-    [CmdletBinding(
-        PositionalBinding=$true)]
-    Param(
-        [Parameter(
-            ValueFromPipeline=$true,
-            ValueFromPipelineByPropertyName=$true,
-            Position=0)]
-        [string] $Path
-    )
+    process
+    {
+        $Local:sln = $_
 
-    process {
-        ./NuGet.exe restore $Path
+        ../../OcBcl/build/NuGet.exe restore $Local:sln
 
-        . $Script:msbuild $Path /t:Build /p:Configuration=Release 
+        . $Script:msbuild $Local:sln /t:Build
     }
 }
 
-function Invoke-BuildDependency
+function build-dependecy
 {
-    [CmdletBinding(
-        PositionalBinding=$true)]
-    Param(
-        [Parameter(
-            ValueFromPipeline=$true,
-            ValueFromPipelineByPropertyName=$true,
-            Position=0)]
-        [string] $ProjectName)
-
-    process {
-        if ($set.ContainsKey($ProjectName))
+    process
+    {
+        if ($set.ContainsKey($_))
         {
             return;
         }
 
-        $set.Add($ProjectName, $false)
+        $set.Add($_, $false)
 
         try
         {
-            Push-Location $('..\..\' + $ProjectName + '\build')
+            pushd $('..\..\' + $_ + '\build')
             & .\build.ps1 $set
         }
         finally
         {
-            Pop-Location
+            popd
         }
     }
 }
 
 if (Test-Path dependency.txt)
 {
-    Get-Content ./dependency.txt | Invoke-BuildDependency
+    cat ./dependency.txt | build-dependecy
 }
 
-Get-Content ./solutions.txt | Invoke-Build
+cat ./solutions.txt | build
 
 if (Test-Path postbuild.ps1)
 {
     . ./postbuild.ps1
 }
-
-Pop-Location
