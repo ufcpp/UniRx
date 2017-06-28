@@ -1,1 +1,1 @@
-..\.nuget\NuGet.exe pack .\UniRx.SystemReactive.nuspec -NoPackageAnalysis -OutputDirectory .
+nuget.exe pack .\UniRx.SystemReactive.nuspec -NoPackageAnalysis -OutputDirectory .
