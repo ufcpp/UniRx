@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/OrangeCube/UniRx</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>update dependency</description>
-    <releaseNotes>support netstandard1.0</releaseNotes>
+    <releaseNotes>support netstandard1.3</releaseNotes>
     <copyright>OrangeCube</copyright>
     <tags>UniRx, Rx, reactive extensions</tags>
     <frameworkAssemblies>
