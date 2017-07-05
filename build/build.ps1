@@ -18,7 +18,7 @@ function build
 
         ../../OcBcl/build/NuGet.exe restore $Local:sln
 
-        . $Script:msbuild $Local:sln /t:Build
+        . $Script:msbuild $Local:sln /t:Build /p:Configuration=Release
     }
 }
 
