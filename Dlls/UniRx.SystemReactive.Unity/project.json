@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "MinimumThreadingBridge": "0.10.0.0",
-    "UniRx.SystemReactive": "1.0.3"
+    "UniRx.SystemReactive": "1.0.4"
   }
 }
