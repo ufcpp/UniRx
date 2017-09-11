@@ -289,13 +289,7 @@
 
   <ItemGroup>
     <PackageReference Include="MinimumAsyncBridge" Version="0.10.1" />
-    <PackageReference Include="MvvmBridge" Version="1.1.1" />
-    <PackageReference Include="ValueTupleBridge" Version="0.1.2" />
     <PackageReference Include="UniRx.SystemReactive" Version="1.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>
