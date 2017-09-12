@@ -20,8 +20,28 @@ namespace UniRx
         public static IObservable<Unit> AsObservable(this UnityEngine.Events.UnityEvent unityEvent)
         {
             var dummy = 0;
+
+#if SystemReactive
+
+#endif
+            return Observable.FromEvent<UnityAction, Unit>(h =>
+            {
+
+                dummy.GetHashCode();
+                return new UnityAction(() => h(Unit.Default));
+            }, h => unityEvent.AddListener(h), h => unityEvent.RemoveListener(h));
+
+
             return Observable.FromEvent<UnityAction>(h =>
             {
+
+                // net35
+                // public static IObservable<Unit> FromEvent<TDelegate>(Func<Action, TDelegate> conversion, Action<TDelegate> addHandler, Action<TDelegate> removeHandler);
+
+                // net45
+                // public static IObservable<TEventArgs> FromEvent<TDelegate, TEventArgs>(Func<Action<TEventArgs>, TDelegate> conversion, Action<TDelegate> addHandler, Action<TDelegate> removeHandler);
+
+
                 dummy.GetHashCode(); // capture for AOT issue
                 return new UnityAction(h);
             }, h => unityEvent.AddListener(h), h => unityEvent.RemoveListener(h))
