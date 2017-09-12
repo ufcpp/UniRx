@@ -289,7 +289,7 @@
 
   <ItemGroup>
     <PackageReference Include="MinimumAsyncBridge" Version="0.10.1" />
-    <PackageReference Include="UniRx.SystemReactive" Version="1.0.4" />
+    <PackageReference Include="UniRx.SystemReactive" Version="1.0.5" />
   </ItemGroup>
 
 </Project>
