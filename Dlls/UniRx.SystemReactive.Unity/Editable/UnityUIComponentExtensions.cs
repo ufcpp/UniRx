@@ -20,7 +20,8 @@ namespace UniRx
     /// </summary>
     /// <remarks>
     /// NET35以外標準のSystem.Reactive.Linq.Observableを使用する。
-    /// その場合、Observable.CreateWithStateを利用できないため、その回避としてそのままobservableを返却する。
+    /// その場合、Observable.CreateWithState{T, TState}を利用できないため、
+    /// 代替手段としてとしてObservable.Create{T}を利用する。
     /// </remarks>
     public static partial class UnityUIComponentExtensions
     {
@@ -38,7 +39,11 @@ namespace UniRx
                 return t.onValueChanged.AsObservable().Subscribe(observer);
             });
 #else
-            return toggle.onValueChanged.AsObservable();
+            return Observable.Create<bool>(observer =>
+            {
+                observer.OnNext(toggle.isOn);
+                return toggle.onValueChanged.AsObservable().Subscribe(observer);
+            });
 #endif
         }
 
@@ -51,7 +56,11 @@ namespace UniRx
                 return s.onValueChanged.AsObservable().Subscribe(observer);
             });
 #else
-            return scrollbar.onValueChanged.AsObservable();
+            return Observable.Create<float>(observer =>
+            {
+                observer.OnNext(scrollbar.value);
+                return scrollbar.onValueChanged.AsObservable().Subscribe(observer);
+            });
 #endif
         }
 
@@ -64,7 +73,11 @@ namespace UniRx
                 return s.onValueChanged.AsObservable().Subscribe(observer);
             });
 #else
-            return scrollRect.onValueChanged.AsObservable();
+            return Observable.Create<Vector2>(observer =>
+            {
+                observer.OnNext(scrollRect.normalizedPosition);
+                return scrollRect.onValueChanged.AsObservable().Subscribe(observer);
+            });
 #endif
         }
 
@@ -101,7 +114,11 @@ namespace UniRx
                 return i.onValueChanged.AsObservable().Subscribe(observer);
             });
 #else
-            return inputField.onValueChanged.AsObservable();
+            return Observable.Create<string>(observer =>
+            {
+                observer.OnNext(inputField.text);
+                return inputField.onValueChanged.AsObservable().Subscribe(observer);
+            });
 #endif
         }
     }
