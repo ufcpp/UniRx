@@ -4,12 +4,8 @@
     <TargetFramework>net35</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;UniRxLibrary SystemReactive</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;UniRxLibrary SystemReactive</DefineConstants>
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);UniRxLibrary;SystemReactive</DefineConstants>
   </PropertyGroup>
 
   <!-- フォワード用にソースコードを直接参照する -->
