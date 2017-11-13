@@ -15,9 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.SystemReactive.MergeA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.SystemReactive.MergeAnalyzer.Test", "UniRx.SystemReactive.MergeAnalyzer\UniRx.SystemReactive.MergeAnalyzer.Test\UniRx.SystemReactive.MergeAnalyzer.Test.csproj", "{FF9A392C-96B5-4D71-8BB4-166DB3021F01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.SystemReactive.MergeAnalyzer.Vsix", "UniRx.SystemReactive.MergeAnalyzer\UniRx.SystemReactive.MergeAnalyzer.Vsix\UniRx.SystemReactive.MergeAnalyzer.Vsix.csproj", "{3382BA8B-0A47-4A7E-AE94-0B388E6E8D0D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.SystemReactive.ForwardingToMerge", "UniRx.SystemReactive.ForwardingToMerge\UniRx.SystemReactive.ForwardingToMerge.csproj", "{F49B302F-A96A-41AA-8CA7-E7F08379C051}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniRx.SystemReactive.ForwardingToMerge", "UniRx.SystemReactive.ForwardingToMerge\UniRx.SystemReactive.ForwardingToMerge.csproj", "{F49B302F-A96A-41AA-8CA7-E7F08379C051}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +43,6 @@ Global
 		{FF9A392C-96B5-4D71-8BB4-166DB3021F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF9A392C-96B5-4D71-8BB4-166DB3021F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF9A392C-96B5-4D71-8BB4-166DB3021F01}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3382BA8B-0A47-4A7E-AE94-0B388E6E8D0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3382BA8B-0A47-4A7E-AE94-0B388E6E8D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3382BA8B-0A47-4A7E-AE94-0B388E6E8D0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3382BA8B-0A47-4A7E-AE94-0B388E6E8D0D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F49B302F-A96A-41AA-8CA7-E7F08379C051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F49B302F-A96A-41AA-8CA7-E7F08379C051}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F49B302F-A96A-41AA-8CA7-E7F08379C051}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -60,7 +54,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{97B2DF02-B3EE-487D-88FD-3E6E8C5F5236} = {E045467D-D4BF-4144-B329-E5E9B5749F5E}
 		{FF9A392C-96B5-4D71-8BB4-166DB3021F01} = {E045467D-D4BF-4144-B329-E5E9B5749F5E}
-		{3382BA8B-0A47-4A7E-AE94-0B388E6E8D0D} = {E045467D-D4BF-4144-B329-E5E9B5749F5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {06B3A6A8-15EF-4521-B8C1-0EE4B69BD533}
