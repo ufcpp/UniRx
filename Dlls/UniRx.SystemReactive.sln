@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.SystemReactive.MergeA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.SystemReactive.MergeAnalyzer.Vsix", "UniRx.SystemReactive.MergeAnalyzer\UniRx.SystemReactive.MergeAnalyzer.Vsix\UniRx.SystemReactive.MergeAnalyzer.Vsix.csproj", "{3382BA8B-0A47-4A7E-AE94-0B388E6E8D0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.SystemReactive.ForwardingToMerge", "UniRx.SystemReactive.ForwardingToMerge\UniRx.SystemReactive.ForwardingToMerge.csproj", "{F49B302F-A96A-41AA-8CA7-E7F08379C051}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{3382BA8B-0A47-4A7E-AE94-0B388E6E8D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3382BA8B-0A47-4A7E-AE94-0B388E6E8D0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3382BA8B-0A47-4A7E-AE94-0B388E6E8D0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F49B302F-A96A-41AA-8CA7-E7F08379C051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49B302F-A96A-41AA-8CA7-E7F08379C051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49B302F-A96A-41AA-8CA7-E7F08379C051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49B302F-A96A-41AA-8CA7-E7F08379C051}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
