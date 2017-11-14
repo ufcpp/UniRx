@@ -31,12 +31,12 @@ namespace UniRx.SystemReactive.MergeAnalyzer
             context.RegisterCodeFix(
                 CodeAction.Create(
                     title: title,
-                    createChangedDocument: c => MakeUppercaseAsync(context.Document, root, targetToken, c),
+                    createChangedDocument: c => ReplaceMethod(context.Document, root, targetToken, c),
                     equivalenceKey: title),
                 diagnostic);
         }
 
-        private Task<Document> MakeUppercaseAsync(Document document, SyntaxNode root, SyntaxToken targetToken, CancellationToken cancellationToken)
+        private Task<Document> ReplaceMethod(Document document, SyntaxNode root, SyntaxToken targetToken, CancellationToken cancellationToken)
         {
             var newToken = SyntaxFactory.Identifier(targetToken.LeadingTrivia, UniRxSystemReactiveMergeAnalyzerAnalyzer.ReplaceMethodName, targetToken.TrailingTrivia);
             var newRoot = root.ReplaceToken(targetToken, newToken);

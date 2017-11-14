@@ -21,9 +21,9 @@ namespace UniRx.SystemReactive.MergeAnalyzer
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
-        public override void Initialize(AnalysisContext context) => context.RegisterSyntaxNodeAction(AnalyzeMethodDeclaration, SyntaxKind.InvocationExpression);
+        public override void Initialize(AnalysisContext context) => context.RegisterSyntaxNodeAction(AnalyzeInvocationExpression, SyntaxKind.InvocationExpression);
 
-        private static void AnalyzeMethodDeclaration(SyntaxNodeAnalysisContext context)
+        private static void AnalyzeInvocationExpression(SyntaxNodeAnalysisContext context)
         {
             var expr = context.Node as InvocationExpressionSyntax;
             if (expr == null) return;
