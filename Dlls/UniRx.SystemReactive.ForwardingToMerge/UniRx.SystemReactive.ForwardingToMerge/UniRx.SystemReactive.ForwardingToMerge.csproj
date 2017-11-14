@@ -1,17 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net35</TargetFramework>
+    <TargetFrameworks>net35;net46</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup>
     <DefineConstants>$(DefineConstants);UniRxLibrary;SystemReactive</DefineConstants>
   </PropertyGroup>
 
-  <!-- フォワード用にソースコードを直接参照する -->
-  <ItemGroup>
-    <Compile Include="..\..\Assets\Plugins\UniRx\Scripts\Operators\Merge.cs" Link="Merge.cs" Visible="false" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="UniRx.SystemReactive" Version="1.0.5" />
   </ItemGroup>
