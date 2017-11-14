@@ -1,12 +1,11 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestHelper;
+using Xunit;
 
 namespace UniRx.SystemReactive.MergeAnalyzer.Test
 {
-    [TestClass]
     public class AnalyzerUnitTest : CodeFixVerifier
     {
         #region DefineCode
@@ -56,7 +55,7 @@ namespace MyNameSpace
                 Locations = new[] { new DiagnosticResultLocation("Test0.cs", line, column) }
             };
 
-        [TestMethod]
+        [Fact]
         public void Mergeを呼んだ()
         {
             #region code
@@ -92,7 +91,7 @@ namespace ConsoleApp
             VerifyCSharpDiagnostic(code, expected);
         }
 
-        [TestMethod]
+        [Fact]
         public void 拡張型でMergeを呼んだ()
         {
             #region code
@@ -127,7 +126,7 @@ namespace ConsoleApp
             VerifyCSharpDiagnostic(code, expected);
         }
 
-        [TestMethod]
+        [Fact]
         public void 拡張メソッドのMergeを呼んだ()
         {
             #region code
@@ -163,13 +162,13 @@ namespace ConsoleApp
             VerifyCSharpDiagnostic(code, expected);
         }
 
-        [TestMethod]
+        [Fact]
         public void 空ドキュメント()
         {
             VerifyCSharpDiagnostic("");
         }
 
-        [TestMethod]
+        [Fact]
         public void Mergeを呼ばない()
         {
             #region code
@@ -203,7 +202,7 @@ namespace ConsoleApp
             VerifyCSharpDiagnostic(code);
         }
 
-        [TestMethod]
+        [Fact]
         public void if_falseの中()
         {
             #region code
@@ -240,7 +239,7 @@ namespace ConsoleApp
             VerifyCSharpDiagnostic(code);
         }
 
-        [TestMethod]
+        [Fact]
         public void Observable_Merge以外は使用可能()
         {
             #region code
@@ -275,7 +274,7 @@ namespace ConsoleApp
             VerifyCSharpDiagnostic(code);
         }
 
-        [TestMethod]
+        [Fact]
         public void Observable_Merge以外が混ざっていても問題ない()
         {
             #region code

@@ -23,6 +23,6 @@
   </metadata>
   <files>
     <file src="UniRx.SystemReactive.ForwardingToMerge\bin\Release\net35\UniRx.SystemReactive.ForwardingToMerge.dll" target="lib\net35\" />
-    <file src="UniRx.SystemReactive.MergeAnalyzer\UniRx.SystemReactive.MergeAnalyzer\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
+    <file src="UniRx.SystemReactive.MergeAnalyzer\UniRx.SystemReactive.MergeAnalyzer\bin\Release\*\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
   </files>
 </package>

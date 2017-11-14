@@ -1,11 +1,10 @@
 ﻿using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestHelper;
+using Xunit;
 
 namespace UniRx.SystemReactive.MergeAnalyzer.Test
 {
-    [TestClass]
     public class CodeFixUnitTest : CodeFixVerifier
     {
         #region DefineCode
@@ -46,7 +45,7 @@ namespace MyNameSpace
 
         #endregion
 
-        [TestMethod]
+        [Fact]
         public void Mergeを呼んだ()
         {
             #region code
@@ -82,7 +81,7 @@ namespace ConsoleApp
             VerifyCSharpFix(code, code.Replace("o1.Merge", "o1.MergeEx"));
         }
 
-        [TestMethod]
+        [Fact]
         public void 拡張型でMergeを呼んだ()
         {
             #region code
@@ -117,9 +116,9 @@ namespace ConsoleApp
             VerifyCSharpFix(code, code.Replace("s1.Merge", "s1.MergeEx"));
         }
 
-        //[TestMethod]
+        //[Fact]
         // 拡張メソッドの直呼び出しについては名前空間解決がうまくいかないので無視する
-        public void 拡張メソッドのMergeを呼んだ()
+        void 拡張メソッドのMergeを呼んだ()
         {
             #region code
 
@@ -154,13 +153,13 @@ namespace ConsoleApp
             VerifyCSharpFix(code, code.Replace("Observable.Merge", "Observable.MergeEx"));
         }
 
-        [TestMethod]
+        [Fact]
         public void 空ドキュメント()
         {
             VerifyCSharpFix("", "");
         }
 
-        [TestMethod]
+        [Fact]
         public void Mergeを呼ばない()
         {
             #region code
@@ -195,7 +194,7 @@ namespace ConsoleApp
             VerifyCSharpFix(code, code);
         }
 
-        [TestMethod]
+        [Fact]
         public void if_falseの中()
         {
             #region code
@@ -233,7 +232,7 @@ namespace ConsoleApp
             VerifyCSharpFix(code, code);
         }
 
-        [TestMethod]
+        [Fact]
         public void Observable_Merge以外は使用可能()
         {
             #region code
@@ -269,9 +268,9 @@ namespace ConsoleApp
             VerifyCSharpFix(code, code);
         }
 
-        //[TestMethod]
+        //[Fact]
         // 拡張メソッドの直呼び出しについては名前空間解決がうまくいかないので無視する
-        public void Observable_Merge以外が混ざってても問題ない()
+        void Observable_Merge以外が混ざってても問題ない()
         {
             #region code
 
