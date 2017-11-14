@@ -8,23 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.Common" version="1.0.1" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" version="1.0.1" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" version="1.0.1" />
-    <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic" version="1.0.1" />
-    <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces" version="1.0.1" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" version="1.0.1" />
-    <PackageReference Include="Microsoft.Composition" version="1.0.27" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
-    <PackageReference Include="System.Collections.Immutable" version="1.1.36" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="System.Reactive" version="3.1.1" />
-    <PackageReference Include="System.Reactive.Core" version="3.1.1" />
-    <PackageReference Include="System.Reactive.Interfaces" version="3.1.1" />
-    <PackageReference Include="System.Reactive.Linq" version="3.1.1" />
-    <PackageReference Include="System.Reactive.PlatformServices" version="3.1.1" />
-    <PackageReference Include="System.Reactive.Windows.Threading" version="3.1.1" />
-    <PackageReference Include="System.Reflection.Metadata" version="1.0.21" />
     <PackageReference Include="xunit" Version="2.3.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>

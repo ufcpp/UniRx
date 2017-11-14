@@ -8,15 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" version="1.1.0" targetFramework="portable45-net45+win8" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Common" version="1.0.1" targetFramework="portable45-net45+win8" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" version="1.0.1" targetFramework="portable45-net45+win8" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" version="1.0.1" targetFramework="portable45-net45+win8" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" version="1.0.1" targetFramework="portable45-net45+win8" />
-    <PackageReference Include="Microsoft.Composition" version="1.0.27" targetFramework="portable45-net45+win8" />
-    <PackageReference Include="NuGet.CommandLine" version="2.8.5" targetFramework="portable45-net45+win8" />
-    <PackageReference Include="System.Collections.Immutable" version="1.1.36" targetFramework="portable45-net45+win8" />
-    <PackageReference Include="System.Reflection.Metadata" version="1.0.21" targetFramework="portable45-net45+win8" />
   </ItemGroup>
 
 </Project>
