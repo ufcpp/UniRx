@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>UniRx.SystemReactive.ForwardingToMerge</id>
+    <version>1.0.0.0</version>
+    <title>UniRx.SystemReactive.ForwardingToMerge</title>
+    <authors>OrangeCube</authors>
+    <owners>OranbeCube</owners>
+    <licenseUrl>https://github.com/OrangeCube/UniRxblob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/OrangeCube/UniRx</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>UniRx.SystemReactive.ForwardingToMerge</description>
+    <releaseNotes>Forward to MergeEx</releaseNotes>
+    <copyright>OrangeCube</copyright>
+    <tags>UniRx.SystemReactive.ForwardingToMerge, analyzers</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+    </frameworkAssemblies>
+    <developmentDependency>true</developmentDependency>
+    <dependencies>
+      <dependency id="UniRx.SystemReactive" version="1.0.5" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="UniRx.SystemReactive.ForwardingToMerge\UniRx.SystemReactive.ForwardingToMerge\bin\Release\net35\UniRx.SystemReactive.ForwardingToMerge.dll" target="lib\net35\" />
+    <file src="UniRx.SystemReactive.ForwardingToMerge\UniRx.SystemReactive.ForwardingToMerge\bin\Release\net46\UniRx.SystemReactive.ForwardingToMerge.dll" target="lib\net46\" />
+    <file src="UniRx.SystemReactive.MergeAnalyzer\UniRx.SystemReactive.MergeAnalyzer\bin\Release\*\*.dll" target="analyzers\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
+  </files>
+</package>

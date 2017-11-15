@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>UniRx.SystemReactive.MergeAnalyzer</RootNamespace>
+    <AssemblyName>UniRx.SystemReactive.MergeAnalyzer</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" version="1.0.1" targetFramework="portable45-net45+win8" />
+  </ItemGroup>
+
+</Project>

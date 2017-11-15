@@ -1,0 +1,9 @@
+﻿[
+  {
+    "id": "UniRxSystemReactiveMergeAnalyzer",
+    "sevirity": "Error",
+    "line": 21,
+    "column": 24,
+    "path": "Class1.csx"
+  }
+]
