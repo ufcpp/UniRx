@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net35;net46</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -10,6 +11,12 @@
 
   <ItemGroup>
     <PackageReference Include="UniRx.SystemReactive" Version="1.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\UniRx.SystemReactive.MergeAnalyzer\UniRx.SystemReactive.MergeAnalyzer\bin\$(Configuration)\net462\UniRx.SystemReactive.MergeAnalyzer.dll" Visible="false">
+      <PackagePath>analyzers\cs</PackagePath>
+    </Content>
   </ItemGroup>
 
 </Project>

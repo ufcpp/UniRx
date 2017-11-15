@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27102.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.SystemReactive", "UniRx.SystemReactive\UniRx.SystemReactive.csproj", "{21C57E17-D4B8-4DA4-A6A2-07D8B2E5B3BD}"
 EndProject
@@ -18,6 +18,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UniRx.SystemReactive.ForwardingToMerge", "UniRx.SystemReactive.ForwardingToMerge", "{C1060C62-887F-44BF-A748-47F4AC373B6F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniRx.SystemReactive.ForwardingToMerge", "UniRx.SystemReactive.ForwardingToMerge\UniRx.SystemReactive.ForwardingToMerge\UniRx.SystemReactive.ForwardingToMerge.csproj", "{6F5C096A-27A1-422B-8DD2-092874F977A2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{97B2DF02-B3EE-487D-88FD-3E6E8C5F5236} = {97B2DF02-B3EE-487D-88FD-3E6E8C5F5236}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniRx.SystemReactive.ForwardingToMerge.UnitTest", "UniRx.SystemReactive.ForwardingToMerge\UniRx.SystemReactive.ForwardingToMerge.UnitTest\UniRx.SystemReactive.ForwardingToMerge.UnitTest.csproj", "{F036BB5E-FA00-43DE-8AD8-E0D827C4BADF}"
 EndProject
