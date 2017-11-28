@@ -18,9 +18,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UniRx.SystemReactive.UnityWorkaround", "UniRx.SystemReactive.UnityWorkaround", "{C1060C62-887F-44BF-A748-47F4AC373B6F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniRx.SystemReactive.UnityWorkaround", "UniRx.SystemReactive.UnityWorkaround\UniRx.SystemReactive.UnityWorkaround\UniRx.SystemReactive.UnityWorkaround.csproj", "{610272C5-284C-4D63-A791-E48148E28AA7}"
-	ProjectSection(ProjectDependencies) = postProject
-		{97B2DF02-B3EE-487D-88FD-3E6E8C5F5236} = {97B2DF02-B3EE-487D-88FD-3E6E8C5F5236}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniRx.SystemReactive.UnityWorkaround.UnitTest", "UniRx.SystemReactive.UnityWorkaround\UniRx.SystemReactive.UnityWorkaround.UnitTest\UniRx.SystemReactive.UnityWorkaround.UnitTest.csproj", "{95F26B30-328C-4CBE-9A7D-DECF225AB7A3}"
 EndProject
