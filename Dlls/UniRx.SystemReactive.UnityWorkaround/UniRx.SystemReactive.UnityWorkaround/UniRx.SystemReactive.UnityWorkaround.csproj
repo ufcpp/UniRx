@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net35;net46</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);UniRxLibrary;SystemReactive</DefineConstants>
+    <Description>UniRx.SystemReactive.UnityWorkaround</Description>
+    <PackageReleaseNotes>Forward to MergeEx</PackageReleaseNotes>
+    <PackageTags>UniRx.SystemReactive.UnityWorkaround, analyzers</PackageTags>
+    <Copyright>OrangeCube</Copyright>
+    <PackageLicenseUrl>https://github.com/OrangeCube/UniRxblob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/OrangeCube/UniRx</PackageProjectUrl>
+    <Company>OrangeCube</Company>
+    <Authors>OrangeCube</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="UniRx.SystemReactive" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\UniRx.SystemReactive.MergeAnalyzer\UniRx.SystemReactive.MergeAnalyzer\bin\$(Configuration)\netstandard1.3\UniRx.SystemReactive.MergeAnalyzer.dll" Visible="false">
+      <PackagePath>analyzers\cs</PackagePath>
+    </Content>
+  </ItemGroup>
+
+</Project>

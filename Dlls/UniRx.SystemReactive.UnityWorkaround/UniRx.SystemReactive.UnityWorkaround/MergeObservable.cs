@@ -4,7 +4,7 @@ using System.Reactive.Concurrency;
 using System.Reactive.Disposables;
 using System.Threading;
 
-namespace UniRx.SystemReactive.ForwardingToMerge
+namespace UniRx.SystemReactive.UnityWorkaround
 {
     /// <summary>
     /// <see cref="System.Reactive.Linq.Observable.Merge{TSource}(IObservable{IObservable{TSource}})"/>

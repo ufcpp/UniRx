@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reactive.Concurrency;
-using UniRx.SystemReactive.ForwardingToMerge;
+using UniRx.SystemReactive.UnityWorkaround;
 
 namespace System.Reactive.Linq
 {

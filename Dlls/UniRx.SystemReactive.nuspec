@@ -29,7 +29,7 @@
       </dependencies>
   </metadata>
   <files>
-    <file src="UniRx.SystemReactive\bin\Release\UniRx.dll" target="lib\net35\" />
+    <file src="UniRx.SystemReactive\bin\Release\net35\UniRx.dll" target="lib\net35\" />
     <file src="UniRx.SystemReactive.TypeForwarding\bin\Release\net45\UniRx.dll" target="lib\net45\" />
     <file src="UniRx.SystemReactive.TypeForwarding\bin\Release\net46\UniRx.dll" target="lib\net46\" />
     <file src="UniRx.SystemReactive.TypeForwarding\bin\Release\netstandard1.3\UniRx.dll" target="lib\netstandard1.3\" />

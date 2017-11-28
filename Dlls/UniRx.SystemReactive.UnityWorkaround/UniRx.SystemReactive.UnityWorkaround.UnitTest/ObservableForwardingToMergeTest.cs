@@ -5,7 +5,7 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using Xunit;
 
-namespace UniRx.SystemReactive.ForwardingToMerge.UnitTest
+namespace UniRx.SystemReactive.UnityWorkaround.UnitTest
 {
     public class ObservableForwardingToMergeTest
     {
