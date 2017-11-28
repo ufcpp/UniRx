@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="..\..\UniRx.SystemReactive.MergeAnalyzer\UniRx.SystemReactive.MergeAnalyzer\bin\$(Configuration)\net462\UniRx.SystemReactive.MergeAnalyzer.dll" Visible="false">
+    <Content Include="..\..\UniRx.SystemReactive.MergeAnalyzer\UniRx.SystemReactive.MergeAnalyzer\bin\$(Configuration)\netstandard1.3\UniRx.SystemReactive.MergeAnalyzer.dll" Visible="false">
       <PackagePath>analyzers\cs</PackagePath>
     </Content>
   </ItemGroup>
