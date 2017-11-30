@@ -5,8 +5,11 @@ using UniRx.SystemReactive.UnityWorkaround;
 namespace System.Reactive.Linq
 {
     /// <summary>
-    /// 本家System.ReactiveにあるMergeだとエラーが発生してしまうため    /// 独自実装したMergeへ明示的にフォワードさせる拡張メソッド
+    /// Unityで起こる問題を回避するためのクラス。
     /// </summary>
+    /// <remarks>
+    /// 現状本家RxのMergeがIL2CPPでは動かないため、Mergeだけ自作＆Mergeを使ってたら自作の方に置き換えるアナライザ－作成している
+    /// </remarks>
     public static class UnityWorkaround
     {
         /// <summary>
