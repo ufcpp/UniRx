@@ -5,10 +5,9 @@ using UniRx.SystemReactive.UnityWorkaround;
 namespace System.Reactive.Linq
 {
     /// <summary>
-    /// 本家System.ReactiveにあるMergeだとエラーが発生してしまうため
-    /// 独自実装したMergeへ明示的にフォワードさせる拡張メソッド
+    /// 本家System.ReactiveにあるMergeだとエラーが発生してしまうため    /// 独自実装したMergeへ明示的にフォワードさせる拡張メソッド
     /// </summary>
-    public static class ObservableForwardingToMerge
+    public static class UnityWorkaround
     {
         /// <summary>
         /// UniRxにあるScheduler.DefaultSchedulers.ConstantTimeOperations相当の処理
