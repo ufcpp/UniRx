@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net35;net46</TargetFrameworks>
+    <TargetFrameworks>net35;net46;netstandard1.3</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -15,6 +15,7 @@
     <PackageProjectUrl>https://github.com/OrangeCube/UniRx</PackageProjectUrl>
     <Company>OrangeCube</Company>
     <Authors>OrangeCube</Authors>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
