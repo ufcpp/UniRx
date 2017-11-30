@@ -15,6 +15,7 @@
     <PackageProjectUrl>https://github.com/OrangeCube/UniRx</PackageProjectUrl>
     <Company>OrangeCube</Company>
     <Authors>OrangeCube</Authors>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
