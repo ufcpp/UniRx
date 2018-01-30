@@ -8,14 +8,14 @@
   <PropertyGroup>
     <DefineConstants>$(DefineConstants);UniRxLibrary;SystemReactive</DefineConstants>
     <Description>UniRx.SystemReactive.UnityWorkaround</Description>
-    <PackageReleaseNotes>Forward to MergeEx</PackageReleaseNotes>
+    <PackageReleaseNotes>observe on synchronization context</PackageReleaseNotes>
     <PackageTags>UniRx.SystemReactive.UnityWorkaround, analyzers</PackageTags>
     <Copyright>OrangeCube</Copyright>
     <PackageLicenseUrl>https://github.com/OrangeCube/UniRxblob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/OrangeCube/UniRx</PackageProjectUrl>
     <Company>OrangeCube</Company>
     <Authors>OrangeCube</Authors>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

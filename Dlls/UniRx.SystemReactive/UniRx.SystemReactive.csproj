@@ -132,6 +132,9 @@
     <Compile Include="..\..\Assets\Plugins\UniRx\Scripts\Observer.cs">
       <Link>Observer.cs</Link>
     </Compile>
+    <Compile Include="..\..\Assets\Plugins\UniRx\Scripts\ObservableExtensions.cs">
+      <Link>ObservableExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\Plugins\UniRx\Scripts\Operators\Aggregate.cs">
       <Link>Operators\Aggregate.cs</Link>
     </Compile>
