@@ -23,21 +23,21 @@ namespace UniRx
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
-        /// <param name="synchronizationContext"></param>
+        /// <param name="context"></param>
         /// <returns></returns>
-        public static IObservable<T> ObserveOn<T>(this IObservable<T> source, SynchronizationContext synchronizationContext)
+        public static IObservable<T> ObserveOn<T>(this IObservable<T> source, SynchronizationContext context)
         {
             return Create<T>(x =>
             {
                 return source.Subscribe(arg =>
                 {
-                    if (synchronizationContext == null || synchronizationContext == SynchronizationContext.Current)
+                    if (context == null || context == SynchronizationContext.Current)
                     {
                         x.OnNext(arg);
                     }
                     else
                     {
-                        synchronizationContext.Post(y => x.OnNext((T)y), arg);
+                        context.Post(y => x.OnNext((T)y), arg);
                     }
                 });
             });
