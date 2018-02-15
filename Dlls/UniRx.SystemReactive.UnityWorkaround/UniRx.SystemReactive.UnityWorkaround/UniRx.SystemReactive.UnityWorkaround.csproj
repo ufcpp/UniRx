@@ -15,11 +15,11 @@
     <PackageProjectUrl>https://github.com/OrangeCube/UniRx</PackageProjectUrl>
     <Company>OrangeCube</Company>
     <Authors>OrangeCube</Authors>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="UniRx.SystemReactive" Version="1.1.0" />
+    <PackageReference Include="UniRx.SystemReactive" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
